@@ -23,8 +23,8 @@ jobs:
       - name: Package IPA
         run: |
           mkdir Payload
-          cp -r ./build/Build/Products/Debug-iphoneos/WebDriverAgentRunner-Runner.app Payload/
-          zip -r WebDriverAgent.ipa Payload
+          cp -a ./build/Build/Products/Debug-iphoneos/WebDriverAgentRunner-Runner.app Payload/
+          zip -y -r WebDriverAgent.ipa Payload
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
